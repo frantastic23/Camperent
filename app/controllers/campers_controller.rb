@@ -4,7 +4,6 @@ class CampersController < ApplicationController
   end
 
   def new
-    @camper = Camper.all
   end
 
   def create
