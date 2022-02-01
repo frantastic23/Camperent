@@ -1,2 +1,11 @@
 <h1>Campers#new</h1>
 <p>Find me in app/views/campers/new.html.erb</p>
+
+<%= simple_form_for [ @user, @camper ] do |f| %>
+  <%= f.input :model %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :availability %>
+  <%= f.input :photo_url, input_html: {value: ""} %>
+  <%= f.submit "Add camper", class: "btn btn-primary" %>
+<% end %>
