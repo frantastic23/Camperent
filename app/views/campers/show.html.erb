@@ -1,9 +1,8 @@
-<%= link_to "rent" , class = 'btn btn-lg' %>
-<% end %>
+<%= link_to "rent", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
 
-<h1><%= @camper.user_id %></h1>
- <p><%= @flat.description %></p>
-  <%= @camper.availability %>
-  <%= camper.photo_url %>
-  <%= camper.price %>
-end
+<h1><%= @camper.user_id %> </h1>
+ <p><%= @camper.description %></p>
+  <%= @camper.availability%>
+  <%#@camper.photo_url %>
+  <%= @camper.price %>
+<%= image_tag @camper.photo_url %>
