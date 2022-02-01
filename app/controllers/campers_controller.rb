@@ -24,4 +24,8 @@ class CampersController < ApplicationController
   def camper_params
     params.require(:camper).permit(:model, :price, :description, :availability, :photo_url)
   end
+
+  def show
+    @camper = Camper.find(params[:id])
+  end
 end
