@@ -1,8 +1,13 @@
-<%= link_to "rent", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
+<%= link_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
+<div class="card-product">
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
 
 <h1><%= @camper.user_id %> </h1>
  <p><%= @camper.description %></p>
   <%= @camper.availability%>
-  <%#@camper.photo_url %>
   <%= @camper.price %>
 <%= image_tag @camper.photo_url %>
+  </div>
+</div>
