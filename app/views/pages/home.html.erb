@@ -7,19 +7,21 @@
 <div class="cards">
   <% @campers.each do |camper| %>
     <% if camper.availability  %>
-      <div class="card-product">
-        <img src=<%=camper.photo_url%> />
-        <div class="card-product-infos">
-          <h2><%= camper.model %></h2>
-          <ul>
-            <% camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
-              <li><%= item %></li>
-              <% break if i >= 6 %>
-            <% end  %>
-          </ul>
-          <h3><%= camper.price %>€</h3>
+      <%= link_to camper_path(camper), remote: true do %>
+        <div class="card-product">
+          <img src=<%=camper.photo_url%> />
+          <div class="card-product-infos">
+            <h2><%= camper.model %></h2>
+            <ul>
+              <% camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
+                <li><%= item %></li>
+                <% break if i >= 6 %>
+              <% end  %>
+            </ul>
+            <h3><%= camper.price %>€</h3>
+          </div>
         </div>
-      </div>
+      <% end  %>
     <% end  %>
   <% end %>
 </div>
