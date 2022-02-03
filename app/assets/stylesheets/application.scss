@@ -7,10 +7,13 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "jquery-ui/datepicker";
 
 // Your CSS partials
+@import "components/button";
 @import "components/index";
 @import "components/navbar";
 @import "pages/index";
 @import "components/homepage";
 @import "components/homepage";
+@import "components/search";

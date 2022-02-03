@@ -21,7 +21,7 @@
            <li class="nav-item">
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown show">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= current_user.email %>

@@ -7,7 +7,7 @@
 <div class="cards">
   <% @campers.each do |camper| %>
     <% if camper.availability  %>
-      <%= link_to camper_path(camper), remote: true do %>
+      <%= link_to camper_path(camper) do %>
         <div class="card-product">
           <img src=<%=camper.photo_url%> />
           <div class="card-product-infos">
