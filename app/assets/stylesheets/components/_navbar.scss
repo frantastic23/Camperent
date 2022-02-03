@@ -22,6 +22,7 @@
     color: white;
     padding: 10px 25px;
  }
+}
  .button_sign_up {
   border-radius: 50px;
   background-color: #ffffff;
@@ -32,4 +33,9 @@
     color: white;
  }
 }
+.van {
+  height: 50px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
