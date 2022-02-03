@@ -1,22 +1,3 @@
-
-
-<form action="">
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="04.10.2021">
-  </div>
-<div class="input-group mt-2">
-  <input type="text" class="form-control" placeholder="04.10.2022">
-</div>
-<input type="submit" value="Book" link_to user_booking_request_path class="btn btn-success mt-2" style="width: 100%">
-</form>
-</div>
-    <%= image_tag @camper.photo_url %>
-</div>
-
-</div>
-
-<%= button_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
-
 <div class="card-trip">
   <%= image_tag @camper.photo_url %>
   <div class="card-trip-infos">
@@ -35,6 +16,29 @@
 </div>
 
 <br>
+
+<% if user_signed_in? %>
+  <%= simple_form_for [ @, @review ] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+  <form action="">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="04.10.2021">
+    </div>
+    <div class="input-group mt-2">
+      <input type="text" class="form-control" placeholder="04.10.2022">
+    </div>
+    <input type="submit" value="Book" link_to user_booking_request_path class="btn btn-success mt-2" style="width: 100%">
+  </form>
+<% end  %>
+
+
+<%= button_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
+
+
+
+
 
 <h2>Book now </h2>
 <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
