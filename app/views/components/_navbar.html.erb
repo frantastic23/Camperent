@@ -13,13 +13,13 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Rent a camper", "#", class: "nav-link button" %>
+            <%= link_to "Post a camper", new_camper_path, class: "nav-link button" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Post a camper", "#", class: "nav-link" %>
+            <%= link_to "My bookings", "#", class: "nav-link" %>
           </li>
            <li class="nav-item">
-            <%= link_to "My bookings", "#", class: "nav-link" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
