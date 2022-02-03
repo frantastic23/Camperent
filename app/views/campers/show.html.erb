@@ -28,8 +28,8 @@
               <%= f.input :date_from, as: :date, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "from" } %>
               <%= f.input :date_to, as: :date, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "to" } %>
               <br>
-              <p><%=  %></p>
-              <%= f.submit "Submit review", class: "btn btn-primary" %>
+              <% if @camper. %>
+              <%= f.submit "Book this camper", class: "btn btn-primary" %>
             <% end %>
           </div>
         <% else  %>
