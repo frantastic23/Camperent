@@ -3,31 +3,22 @@ class BookingRequestsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def new
-    @bookings = Booking.new
-  end
-
   def edit
-  end
-
-  def create
-    @booking = Booking.new(booking_params)
-    @user = User.find(params[:user_id])
-    @booking.user = @user
-    if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      render :new
-    end
   end
 
   def show
     @booking = booking.find(params[:id])
   end
 
+  def create
+    @user = current_user
+    @camper = Camper.find(params[:camper_id])
+    @booking = BookingRequest.new(booking_request_params)
+  end
+
   private
 
-  def booking_params
-    params.require(:booking).permit(:availability)
+  def booking_request_params
+    params.require(:booking_request).permit(:date_from, :date_to, :cost)
   end
 end
