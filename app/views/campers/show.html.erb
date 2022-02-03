@@ -1,5 +1,5 @@
 <div class="card-trip">
-  <%= image_tag @camper.photo_url %>
+    <%= cl_image_tag @camper.photo.key %>
   <div class="card-trip-infos">
     <div>
       <h2> <%= @camper.model %></h2>
@@ -18,7 +18,7 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= simple_form_for [ @, @review ] do |f| %>
+  <%= simple_form_for [ @review ] do |f| %>
     <%= f.input :content %>
     <%= f.submit "Submit review", class: "btn btn-primary" %>
   <% end %>
