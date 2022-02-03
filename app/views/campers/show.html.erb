@@ -1,13 +1,26 @@
-<%= link_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
-<div class="card-product">
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
 
-<h1><%= @camper.user_id %> </h1>
- <p><%= @camper.description %></p>
-  <%= @camper.availability%>
+
+
+<div class="camper-show-card">
+  <h1>My camper details</h1>
   <%= @camper.price %>
-<%= image_tag @camper.photo_url %>
-  </div>
+  <div>
+  <p><%= @camper.description %></p>
+<div class="col-4">
+  <div class="camper-show-card">
+  <h2>Book your camper here</h2>
+<form action="">
+  <div class="input-group">
+  <input type="text" class="form-control" placeholder="04.10.2021">
+</div>
+<div class="input-group mt-2">
+  <input type="text" class="form-control" placeholder="04.10.2022">
+</div>
+<input type="submit" value="Book" link_to user_booking_request_path class="btn btn-success mt-2" style="width: 100%">
+</form>
+</div>
+    <%= image_tag @camper.photo_url %>
+</div>
+
+</div>
 </div>

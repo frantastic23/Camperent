@@ -19,13 +19,16 @@ class CampersController < ApplicationController
     end
   end
 
+  def show
+    @camper = Camper.find(params[:id])
+  end
+
+  def edit
+  end
+
   private
 
   def camper_params
     params.require(:camper).permit(:model, :price, :description, :availability, :photo_url)
-  end
-
-  def show
-    @camper = Camper.find(params[:id])
   end
 end
