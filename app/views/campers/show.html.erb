@@ -1,0 +1,56 @@
+<div class="card-trip">
+  <%= image_tag @camper.photo_url %>
+  <div class="card-trip-infos">
+    <div>
+      <h2> <%= @camper.model %></h2>
+      <ul>
+              <% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
+                <p><%= item %></p>
+              <% end  %>
+      </ul>
+
+    </div>
+    <h2 class="card-trip-pricing"><%= @camper.price %>€</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= simple_form_for [ @, @review ] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+  <form action="">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="04.10.2021">
+    </div>
+    <div class="input-group mt-2">
+      <input type="text" class="form-control" placeholder="04.10.2022">
+    </div>
+    <input type="submit" value="Book" link_to user_booking_request_path class="btn btn-success mt-2" style="width: 100%">
+  </form>
+<% end  %>
+
+
+<%= button_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
+
+
+
+
+
+<h2>Book now </h2>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="date_from" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+</form>
+<!-- input with datepicker -->
+<div class="md-form md-outline input-with-post-icon datepicker">
+  <input placeholder="Select date" type="date" id="example" class="form-control">
+  <label for="example">Try me...</label>
+</div>
