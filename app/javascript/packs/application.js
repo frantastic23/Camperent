@@ -20,11 +20,17 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import "jquery-ui-bundle";
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initDatePicker } from '../components/datepicker';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initDatePicker;
+
 });
