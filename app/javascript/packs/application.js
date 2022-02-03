@@ -31,6 +31,6 @@ import { initDatePicker } from '../components/datepicker';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initDatePicker;
+  initDatePicker();
 
 });
