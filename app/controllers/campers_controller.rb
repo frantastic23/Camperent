@@ -23,6 +23,9 @@ class CampersController < ApplicationController
     @camper = Camper.find(params[:id])
   end
 
+  def edit
+  end
+
   private
 
   def camper_params

@@ -1,6 +1,13 @@
 class BookingRequestsController < ApplicationController
-  def new
-    @user = current_user
+  def index
+    @bookings = Booking.all
+  end
+
+  def edit
+  end
+
+  def show
+    @booking = booking.find(params[:id])
   end
 
   def create

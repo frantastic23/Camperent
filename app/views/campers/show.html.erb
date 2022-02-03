@@ -1,3 +1,31 @@
+
+
+
+
+<div class="camper-show-card">
+  <h1>My camper details</h1>
+  <%= @camper.model %>
+  <%= @camper.price %>
+  <div>
+  <p><%= @camper.description %></p>
+<div class="col-4">
+  <div class="camper-show-card">
+  <h2>Book your camper here</h2>
+<form action="">
+  <div class="input-group">
+  <input type="text" class="form-control" placeholder="04.10.2021">
+</div>
+<div class="input-group mt-2">
+  <input type="text" class="form-control" placeholder="04.10.2022">
+</div>
+<input type="submit" value="Book" link_to user_booking_request_path class="btn btn-success mt-2" style="width: 100%">
+</form>
+</div>
+    <%= image_tag @camper.photo_url %>
+</div>
+
+</div>
+
 <%= button_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
 
 <div class="card-trip">
