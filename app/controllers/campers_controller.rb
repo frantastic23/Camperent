@@ -4,14 +4,12 @@ class CampersController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @camper = Camper.new
   end
 
   def create
     @camper = Camper.new(camper_params)
-    @user = User.find(params[:user_id])
-    @camper.user = @user
+    @camper.user = current_user
     if @camper.save
       redirect_to camper_path(@camper)
     else
@@ -21,6 +19,8 @@ class CampersController < ApplicationController
 
   def show
     @camper = Camper.find(params[:id])
+    @user = current_user if user_signed_in?
+    @booking = BookingRequest.new
   end
 
   def edit

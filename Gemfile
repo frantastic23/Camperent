@@ -9,6 +9,8 @@ gem 'faker'
 #Metro Ui 4 for different stylesheets components
 gem 'now-ui-kit-rails', '~> 0.0.5'
 
+gem 'validates_timeliness', '~> 6.0.0.beta2'
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
