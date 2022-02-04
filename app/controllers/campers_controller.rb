@@ -3,7 +3,7 @@ class CampersController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @campers = Camper.all
+    @campers = current_user.campers
   end
 
   def new
