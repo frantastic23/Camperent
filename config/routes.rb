@@ -4,9 +4,14 @@ Rails.application.routes.draw do
   resources :campers, only: %i[index new create show]
   resources :users do
     resources :campers, only: :show do
-      resources :booking_requests, only: %i[new create]
+      resources :booking_requests, only: %i[new create] do
+        collection do
+          post :confirm
+        end
+      end
     end
     resources :booking_requests, only: %i[index]
   end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

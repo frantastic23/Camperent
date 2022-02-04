@@ -24,13 +24,13 @@
         <% if user_signed_in? %>
           <h2 class="font-weight-bold">Book Now</h2>
           <div class="md-form md-outline input-with-post-icon datepicker">
-            <%= simple_form_for [ @user, @camper, @booking ] do |f| %>
+            <%= simple_form_for [ @user, @camper, @booking ], url: confirm_user_camper_booking_requests_path(@user, @camper)  do |f| %>
 
-              <%= f.input :date_from, as: :date, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "from" } %>
-              <%= f.input :date_to, as: :date, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "to" } %>
+              <%= f.input :date_from, as: :date, placeholder:'select date', :order => [:day, :month, :year], :input_html => { :class => 'form_control date_picker', id: "from" } %>
+              <%= f.input :date_to, as: :date, placeholder:'select date', :order => [:day, :month, :year], :input_html => { :class => 'form_control date_picker', id: "to" } %>
               <br>
-
               <%= f.submit "Book this camper", class: "btn btn-success" %>
+              <%= display_errors_for(@booking) %>
             <% end %>
           </div>
         <% else  %>
