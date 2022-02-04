@@ -1,8 +1,7 @@
 class BookingRequestsController < ApplicationController
+  before_action :authenticate_user!
   def index
-
     @bookings = current_user.booking_requests
-
   end
 
   def edit

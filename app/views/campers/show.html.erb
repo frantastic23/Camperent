@@ -34,7 +34,8 @@
             <% end %>
           </div>
         <% else  %>
-          <%= link_to sing_in_path %>
+          <p class="font-light"> To book this camper please Sign In</p>
+          <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-success' %>
         <% end  %>
       </div>
     </div>
