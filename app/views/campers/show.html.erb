@@ -17,12 +17,46 @@
 
 <br>
 
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 m-auto bg-light my-4 shadow p-3 mb-5 bg-body rounded">
+      <div class="flat-form mx-4 mt-4">
+        <% if user_signed_in? %>
+          <div class="md-form md-outline input-with-post-icon datepicker">
+            <%= simple_form_for [ @user, @camper, @booking ] do |f| %>
+
+              <%= f.input :date_from, as: :date, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "from" } %>
+              <%= f.input :date_to, as: :date, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "to" } %>
+              <br>
+              <% if @camper. %>
+              <%= f.submit "Book this camper", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        <% else  %>
+          <%= link_to sing_in_path %>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+  </div>
+<div class="md-form md-outline input-with-post-icon datepicker">
+  <input placeholder="Select date" type="date" id="example" class="form-control">
+</div>
+
 <% if user_signed_in? %>
-  <%= simple_form_for [ @, @review ] do |f| %>
-    <%= f.input :content %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
-  <% end %>
-  <form action="">
+  <div class="md-form md-outline input-with-post-icon datepicker">
+    <%= simple_form_for [ @user, @camper, @booking ] do |f| %>
+
+        <%= f.input :date_from, placeholder:'select date', :input_html => { :class => 'form_control date_picker', id: "example" } %>
+        <%# <input placeholder="Select date" type="date" id="example" class="form-control"> %>
+
+
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end  %>
+
+<form action="">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="04.10.2021">
     </div>
@@ -31,10 +65,8 @@
     </div>
     <input type="submit" value="Book" link_to user_booking_request_path class="btn btn-success mt-2" style="width: 100%">
   </form>
-<% end  %>
 
-
-<%= button_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %>
+<%# <%= button_to "Book Here", new_user_booking_request_path(@camper) , class:'btn btn-lg' %> %>
 
 
 
@@ -50,7 +82,3 @@
   </div>
 </form>
 <!-- input with datepicker -->
-<div class="md-form md-outline input-with-post-icon datepicker">
-  <input placeholder="Select date" type="date" id="example" class="form-control">
-  <label for="example">Try me...</label>
-</div>
