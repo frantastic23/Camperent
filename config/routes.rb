@@ -10,9 +10,9 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :booking_requests, only: %i[index]
+    resources :booking_requests, only: %i[index show]
   end
-  resources :booking_requests, only: %i[show]
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
