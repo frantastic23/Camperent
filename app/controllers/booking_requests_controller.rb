@@ -35,7 +35,7 @@ class BookingRequestsController < ApplicationController
     if @booking.save
       redirect_to user_booking_requests_path(current_user)
     else
-      @booking.errors.add(:base, "The camper is not available on the dates")
+      @booking.errors.add(:base, " The camper is not available on the dates")
       redirect_to @camper
     end
   end
