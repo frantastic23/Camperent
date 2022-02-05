@@ -90,13 +90,50 @@
   margin-top: 8px;
 }
 
+.card-index {
+  margin-top: 10;
+  overflow: hidden;
+  height: 200px;
+  width: 800px;
+  background: rgba(255, 255, 255, 0.849);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr
+
+
+}
+
+.card-index .container {
+  padding: 10px
+}
+.card-index img {
+    height: 100%;
+    width: 180px;
+    object-fit: cover;
+  }
+
+.card-index p {
+  font-size: 16px;
+  opacity: .7;
+  margin-bottom:1px;
+}
+.card-index h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4e4d47d3;
+}
+
 .card-product .card-product-infos {
-  padding: 10px;
   li {
     font-size: 9px;
     opacity: .6;
     margin-bottom: 0;
     color: #2c2b27;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: .7
   }
 
   ul {
