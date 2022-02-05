@@ -1,8 +1,8 @@
 class BookingRequestsController < ApplicationController
+  before_action :authenticate_user!
   def index
-
-    @bookings = current_user.booking_requests
-
+    @user = current_user
+    @bookings = @user.booking_requests
   end
 
   def edit
@@ -39,8 +39,8 @@ class BookingRequestsController < ApplicationController
     if @booking.save
       redirect_to user_booking_requests_path(current_user)
     else
-      @booking.errors.add(:base, " The camper is not available on the dates")
-      redirect_to @camper
+      @camper.errors.add(:base, " The camper is not available on the dates")
+      render 'campers/show'
     end
   end
 

@@ -1,1 +1,13 @@
-<p>hello</p>
+<div class="container p-10">
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <img src=<%=booking.camper.photo_url%> />
+      <div class="card-product-infos">
+        <h2><%=  %></h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+
+
+  <% end %>
+</div>

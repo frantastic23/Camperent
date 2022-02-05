@@ -27,10 +27,10 @@ import "jquery-ui-bundle";
 
 
 // Internal imports, e.g:
-import { initDatePicker } from '../components/datepicker';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initDatePicker();
+  initFlatpickr();
 
 });

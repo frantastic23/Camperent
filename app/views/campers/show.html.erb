@@ -26,15 +26,16 @@
           <div class="md-form md-outline input-with-post-icon datepicker">
             <%= simple_form_for [ @user, @camper, @booking ], url: confirm_user_camper_booking_requests_path(@user, @camper)  do |f| %>
 
-              <%= f.input :date_from, as: :date, placeholder:'select date', :order => [:day, :month, :year], :input_html => { :class => 'form_control date_picker', id: "from" } %>
-              <%= f.input :date_to, as: :date, placeholder:'select date', :order => [:day, :month, :year], :input_html => { :class => 'form_control date_picker', id: "to" } %>
+              <%= f.input :date_from, as: :string, required: true, placeholder:'select date', :order => [:day, :month, :year], input_html: {class: "datepicker", id: "from" } %>
+              <%= f.input :date_to, as: :string, required: true, placeholder:'select date', :order => [:day, :month, :year], input_html: {class: "datepicker", id: "to" } %>
               <br>
               <%= f.submit "Book this camper", class: "btn btn-success" %>
-              <%= display_errors_for(@booking) %>
+              <%= display_errors_for(@camper) %>
             <% end %>
           </div>
         <% else  %>
-          <%= link_to sing_in_path %>
+          <p class="font-light"> To book this camper please Sign In</p>
+          <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-success' %>
         <% end  %>
       </div>
     </div>
