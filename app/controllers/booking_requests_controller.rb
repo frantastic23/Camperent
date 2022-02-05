@@ -19,14 +19,9 @@ class BookingRequestsController < ApplicationController
     @camper = Camper.find(params[:camper_id])
     @booking = BookingRequest.new(booking_request_params)
     console
-    if @camper.available?(@booking.date_from, @booking.date_to)
-      @booking.user = @user
-      @booking.camper = @camper
-      @booking.calculate_cost
-    else
-      @booking.errors.add(:base, "The camper is not available on the dates")
-      render camper_path(@camper)
-    end
+    @booking.user = @user
+    @booking.camper = @camper
+    @booking.calculate_cost
   end
 
   def create
