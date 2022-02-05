@@ -18,7 +18,7 @@ class BookingRequestsController < ApplicationController
     @user = current_user
     @camper = Camper.find(params[:camper_id])
     @booking = BookingRequest.new(booking_request_params)
-    console
+    # console
     @booking.user = @user
     @booking.camper = @camper
     @booking.calculate_cost
