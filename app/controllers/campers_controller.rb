@@ -24,6 +24,7 @@ class CampersController < ApplicationController
     @camper = Camper.find(params[:id])
     @user = current_user if user_signed_in?
     @booking = BookingRequest.new
+    console
   end
 
   def edit

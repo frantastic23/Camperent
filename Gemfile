@@ -11,6 +11,9 @@ gem 'now-ui-kit-rails', '~> 0.0.5'
 
 gem 'validates_timeliness', '~> 6.0.0.beta2'
 
+#date picker for the booking
+gem 'flatpickr'
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
