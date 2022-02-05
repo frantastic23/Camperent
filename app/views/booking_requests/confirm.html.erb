@@ -1,16 +1,21 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-6 p-3-mb-5">
-      <p><strong>name:</strong> <%= @user.first_name  %> <%= @user.last_name %> </p>
-      <p><strong>camper model:</strong> <%= @camper.model %></p>
-      <p><strong>date from:</strong> <%= @booking.date_from %></p>
-      <p><strong>date to:</strong> <%= @booking.date_to %></p>
+      <% if @camper.available?(@booking.date_from, @booking.date_to)  %>
+        <p><strong>name:</strong> <%= @user.first_name  %> <%= @user.last_name %> </p>
+        <p><strong>camper model:</strong> <%= @camper.model %></p>
+        <p><strong>date from:</strong> <%= @booking.date_from %></p>
+        <p><strong>date to:</strong> <%= @booking.date_to %></p>
 
-      <p><Strong>price per day: </Strong> <%= @camper.price %>€/day</p>
-      <br>
-      <h2>Total:        <%= @booking.calculate_cost %>€</h2>
-      <% attr = {@booking.date_from, @booking.date_to}  %>
-      <%= link_to 'Confirm', user_camper_booking_requests_path(@user, @camper, param: attr), { method: 'post'}%>
+        <p><Strong>price per day: </Strong> <%= @camper.price %>€/day</p>
+        <br>
+        <% @booking.calculate_cost %>
+        <h2>Total:        <%= @booking.cost %>€</h2>
+        <% attr = {date_from: @booking.date_from, date_to: @booking.date_to}  %>
+        <%= link_to 'Confirm', user_camper_booking_requests_path(@user, @camper, param: attr), { method: 'post'}%>
+      <% else %>
+        <h2>We are sorry, this camper is not available on the following dates</h2>
+      <%end  %>
     </div>
   </div>
 </div>

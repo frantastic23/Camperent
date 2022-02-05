@@ -4,6 +4,7 @@ class BookingRequest < ApplicationRecord
   validates :user, presence: true
   validates :date_from, presence: true
   validates :date_to, presence: true
+  validates :cost, presence: true
   validates_date :date_from, on_or_after: -> { Date.current }, message: "date must be after today"
   validates_date :date_to, after: -> { :date_from }, message: "date must be after the initial date"
   validates_each :camper do |record, attr, value|
@@ -12,6 +13,6 @@ class BookingRequest < ApplicationRecord
 
   def calculate_cost
     days = date_to.to_i - date_from.to_i
-    @cost = days * camper.price
+    self.cost = days * camper.price
   end
 end

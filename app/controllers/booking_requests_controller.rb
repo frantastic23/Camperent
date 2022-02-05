@@ -18,6 +18,7 @@ class BookingRequestsController < ApplicationController
     @user = current_user
     @camper = Camper.find(params[:camper_id])
     @booking = BookingRequest.new(booking_request_params)
+    console
     if @camper.available?(@booking.date_from, @booking.date_to)
       @booking.user = @user
       @booking.camper = @camper

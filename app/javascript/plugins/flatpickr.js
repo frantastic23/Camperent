@@ -1,7 +1,9 @@
 import flatpickr from "flatpickr";
 
 const initFlatpickr = () => {
-  flatpickr(".datepicker", {});
+  flatpickr(".datepicker", {
+    dateFormat: "d-m-Y"
+  });
 }
 
 export { initFlatpickr };
