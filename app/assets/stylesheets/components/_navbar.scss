@@ -19,11 +19,24 @@
    &:hover {
     border-radius: 50px;
     background-color: #064635;
-    color: white;
+    color: white!important;
     padding: 10px 25px;
  }
 }
- .button_sign_up {
+.button2 {
+  border-radius: 50px;
+  background-color: #064635;
+  color: #ffffff!important;
+  padding: 10px 25px;
+   &:hover {
+    border-radius: 50px;
+    background-color: #ffffff!important;
+    color: #064635!important;
+    padding: 10px 25px;
+ }
+}
+
+ .findCamper {
   border-radius: 50px;
   background-color: #ffffff;
   color: #064635;
@@ -47,4 +60,15 @@
   &:hover {
     text-decoration: underline!important;
   }
+}
+.price {
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #064635;
+  padding:10px 20px;
+   &:hover {
+    border-radius: 50px;
+    background-color: #064635;
+    color: white;
+ }
 }
