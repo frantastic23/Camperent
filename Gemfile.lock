@@ -104,6 +104,7 @@ GEM
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.5)
+    flatpickr (4.6.6.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (1.0.0)
@@ -237,6 +238,7 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.2.1)
     tilt (2.0.10)
+    timeliness (0.4.4)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -245,6 +247,9 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
+    validates_timeliness (6.0.0.beta2)
+      activemodel (>= 6.0.0, < 7)
+      timeliness (>= 0.3.10, < 1)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -282,6 +287,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  flatpickr
   font-awesome-sass
   jbuilder (~> 2.7)
   jquery-rails
@@ -300,6 +306,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
+  validates_timeliness (~> 6.0.0.beta2)
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)

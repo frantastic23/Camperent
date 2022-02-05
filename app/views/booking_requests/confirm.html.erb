@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 p-3-mb-5">
+      <p><strong>name:</strong> <%= @user.first_name  %> <%= @user.last_name %> </p>
+      <p><strong>camper model:</strong> <%= @camper.model %></p>
+      <p><strong>date from:</strong> <%= @booking.date_from %></p>
+      <p><strong>date to:</strong> <%= @booking.date_to %></p>
+
+      <p><Strong>price per day: </Strong> <%= @camper.price %>€/day</p>
+      <br>
+      <h2>Total:        <%= @booking.calculate_cost %>€</h2>
+      <% attr = {@booking.date_from, @booking.date_to}  %>
+      <%= link_to 'Confirm', user_camper_booking_requests_path(@user, @camper, param: attr), { method: 'post'}%>
+    </div>
+  </div>
+</div>
