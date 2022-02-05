@@ -1,1 +1,18 @@
-<h1>Campers#index</h1>
+  <% @campers.each do |camper| %>
+
+ <div class="card-product">
+  <% if camper.photo.attached? %>
+    <%= cl_image_tag(camper.photo.key,
+        width: 400, height: 300, crop: :fill) %>
+  <% else %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <% end %>
+  <div class="card-product-infos">
+    <h2><%=camper.model %></h2>
+    <p> <%=camper.price %></p>
+     <%= @booking.date_from %>
+    <%= @booking.date_to %>
+    <%= %>
+  </div>
+</div>
+<% end %>
