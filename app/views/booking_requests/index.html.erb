@@ -1,10 +1,10 @@
 <div class="container justify-content-center my-5">
   <div class="row justify-content-around">
     <% @bookings.each do |booking| %>
-      <div class="card-index mb-10">
+      <div class="card-index my-3">
         <% if booking.camper.photo.attached? %>
                 <%= cl_image_tag(booking.camper.photo.key,
-                 width: 400, height: 300, crop: :fill) %>
+                 width: 400, height: 300, crop:) %>
                <% else %>
                 <img src=<%=booking.camper.photo_url%> />
               <% end %>
