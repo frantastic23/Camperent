@@ -2,7 +2,12 @@
   <div class="row justify-content-around">
     <% @bookings.each do |booking| %>
       <div class="card-index mb-10">
-        <img src=<%= booking.camper.photo_url %> />
+        <% if booking.camper.photo.attached? %>
+                <%= cl_image_tag(booking.camper.photo.key,
+                 width: 400, height: 300, crop: :fill) %>
+               <% else %>
+                <img src=<%=booking.camper.photo_url%> />
+              <% end %>
         <div class="card-index container">
           <div class="row">
             <div class="col-sm">
