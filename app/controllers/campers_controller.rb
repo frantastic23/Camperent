@@ -1,6 +1,9 @@
 class CampersController < ApplicationController
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :show
+
   def index
-    @campers = Camper.all
+    @campers = current_user.campers
   end
 
   def new
@@ -21,6 +24,7 @@ class CampersController < ApplicationController
     @camper = Camper.find(params[:id])
     @user = current_user if user_signed_in?
     @booking = BookingRequest.new
+    console
   end
 
   def edit
