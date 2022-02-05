@@ -1,29 +1,31 @@
-<div class="container justify-content-center">
-  <% @bookings.each do |booking| %>
-    <div class="card-index mb-10">
-      <img src=<%=booking.camper.photo_url%> />
-      <div class="card-index container">
-        <div class="row">
-          <div class="col-sm">
-            <h3>User:</h3>
-            <h3>Email:</h3>
-            <h3>Model of the camper:</h3>
-            <h3>Date from:</h3>
-            <h3>Date to:</h3>
-            <h3>Total Cost:</h3>
-          </div>
-          <div class="col-sm">
-            <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-            <p><%= booking.user.email %></p>
-            <p><%= booking.camper.model %></p>
-            <p><%= booking.date_from %></p>
-            <p><%= booking.date_to %></p>
-            <p><strong><%= booking.cost %> €</strong></p>
+<div class="container justify-content-center my-5">
+  <div class="row justify-content-around">
+    <% @bookings.each do |booking| %>
+      <div class="card-index mb-10">
+        <img src=<%= booking.camper.photo_url %> />
+        <div class="card-index container">
+          <div class="row">
+            <div class="col-sm">
+              <h3>User:</h3>
+              <h3>Email:</h3>
+              <h3>Model of the camper:</h3>
+              <h3>Date from:</h3>
+              <h3>Date to:</h3>
+              <h3>Total Cost:</h3>
+            </div>
+            <div class="col-sm">
+              <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+              <p><%= booking.user.email %></p>
+              <p><%= booking.camper.model %></p>
+              <p><%= booking.date_from %></p>
+              <p><%= booking.date_to %></p>
+              <p><strong><%= booking.cost %> €</strong></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
