@@ -4,7 +4,7 @@
       <div class="card-index my-3">
         <% if booking.camper.photo.attached? %>
                 <%= cl_image_tag(booking.camper.photo.key,
-                 width: 400, height: 300, crop:) %>
+                 width: 400, height: 300, crop: :fill) %>
                <% else %>
                 <img src=<%=booking.camper.photo_url%> />
               <% end %>
@@ -29,8 +29,6 @@
           </div>
         </div>
       </div>
-
-
     <% end %>
   </div>
 </div>
