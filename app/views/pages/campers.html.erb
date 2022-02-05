@@ -6,12 +6,7 @@
         <% if camper.availability  %>
           <%= link_to camper_path(camper) do %>
             <div class="card-product">
-              <% if camper.photo.attached? %>
-                <%= cl_image_tag(camper.photo.key,
-                 width: 400, height: 300, crop: :fill) %>
-               <% else %>
-                <img src="https://www.myluxury.it/img/2021/10/Volkner-Mobil-Performance-S.jpg" />
-              <% end %>
+              <img src=<%=camper.photo_url%> />
               <div class="card-product-infos">
                 <h2 style="padding-left: 30px; padding-bottom: 8px; padding-top:16px; color:#064635;"><%= camper.model %></h2>
                 <ul>
@@ -20,8 +15,6 @@
                     <% break if i >= 6 %>
                   <% end  %>
                 </ul>
-                  <%= @booking.date_from %>
-                  <%= @booking.date_to %>
                 <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
               </div>
             </div>

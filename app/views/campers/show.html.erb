@@ -1,5 +1,9 @@
 <div class="card-trip">
-  <%= image_tag @camper.photo_url %>
+  <% if @camper.photo.attached? %>
+    <%= cl_image_tag @camper.photo.key %>
+  <% else %>
+    <img src="https://www.myluxury.it/img/2021/10/Volkner-Mobil-Performance-S.jpg" />
+  <% end %>
   <div class="card-trip-infos">
     <div>
       <h2> <%= @camper.model %></h2>

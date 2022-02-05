@@ -7,6 +7,7 @@ class CampersController < ApplicationController
   end
 
   def new
+    @user = current_user
     @camper = Camper.new
   end
 
@@ -33,6 +34,6 @@ class CampersController < ApplicationController
   private
 
   def camper_params
-    params.require(:camper).permit(:model, :price, :description, :availability, :photo_url)
+    params.require(:camper).permit(:model, :price, :description, :availability, :photo_url, :photo)
   end
 end

@@ -1,8 +1,13 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 10px 16px;
+  grid-gap: 40px 50px;
+  padding: 35px 16px;
+
+}
+
+.nodeco a{
+  text-decoration: none;
 }
 
 // Smallest device
@@ -48,6 +53,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+   &:hover{
+    background-color: #e5f9f6;
+    color: white;
+    float:initial;
+ }
 }
 
 .card-product img {
@@ -95,6 +105,8 @@
 }
 
 .card-trip {
+  height: 300px;
+  width: 800px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
