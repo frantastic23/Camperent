@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 p-3-mb-5">
+      <p><strong>name:</strong> <%= @user.first_name  %> <%= @user.last_name %> </p>
+      <p><strong>camper model:</strong> <%= @camper.model %></p>
+      <% date1 = @booking.date_from.delete("{}").split(',').map {|d| d.split('=>')[1]} %>
+      <% df=  "#{date1[0]}/#{date1[1]}/#{date1[2]}" %>
+      <p><strong>date from:</strong> <%= df %></p>
+
+      <% date1 = @booking.date_to.delete("{}").split(',').map {|d| d.split('=>')[1]} %>
+      <% dt=  "#{date1[0]}/#{date1[1]}/#{date1[2]}" %>
+      <p><strong>date to:</strong> <%= dt %></p>
+
+      <p><Strong>price per day: </Strong> <%= @camper.price %>€/day</p>
+      <br>
+      <%@booking.date_from = df  %>
+      <%@booking.date_to = dt  %>
+      <h2>Total:        <%= @booking.calculate_cost %>€</h2>
+      <% attr = {date_from: df, date_to: dt}  %>
+      <%= link_to 'Confirm', user_camper_booking_requests_path(@user, @camper, param: attr), { method: 'post'}%>
+    </div>
+  </div>
+</div>
