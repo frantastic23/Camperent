@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 10px;
+  height: 80vh;
 }
 
 .banner h1 {
@@ -18,4 +19,9 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: center;
+}
+
+.headerTitle {
+  font-size: 50px;
+  color: white!important;
 }

@@ -15,12 +15,7 @@
   <body class="d-flex flex-column min-vh-100">
 
     <%= render "components/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% flash.each do |name, msg| %>
-      <%= msg %>
-    <% end %>
-
+    <%= render "shared/flashes" %>
     <%= yield %>
     <%= render "components/footer" %>
   </body>

@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
+  grid-gap: 40px 50px;
   padding: 35px 16px;
 
 }
@@ -53,7 +53,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-   &:hover {
+   &:hover{
     background-color: #e5f9f6;
     color: white;
     float:initial;
