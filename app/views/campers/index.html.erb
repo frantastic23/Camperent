@@ -3,7 +3,6 @@
   <h1 style="color:#064635; padding-top:16px;">My Campers </h1>
     <div class="cards nodeco">
       <% @campers.each do |camper| %>
-      <%= link_to  %>
         <%=link_to "Delete", camper_path(camper.id), method: "delete", data: {confirm: "Are you sure?"} %>
             <div class="card-product">
               <% if camper.photo.attached? %>
