@@ -3,27 +3,25 @@
   <h1 style="color:#064635; padding-top:16px;">My Campers </h1>
     <div class="cards nodeco">
       <% @campers.each do |camper| %>
-        <% if camper.availability  %>
-          <%= link_to camper_path(camper) do %>
-            <div class="card-product">
-              <% if camper.photo.attached? %>
-                <%= cl_image_tag(camper.photo.key,
-                 width: 400, height: 300, crop: :fill) %>
-               <% else %>
-                <img src=<%=camper.photo_url%> />
-              <% end %>
-              <div class="card-product-infos">
-                <h2 style="padding-left: 30px; padding-bottom: 8px; padding-top:16px; color:#064635;"><%= camper.model %></h2>
-                <ul>
-                  <% camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
-                    <li><%= item %></li>
-                    <% break if i >= 6 %>
-                  <% end  %>
-                </ul>
-                <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
-              </div>
+        <%= link_to camper_path(camper) do %>
+          <div class="card-product">
+            <% if camper.photo.attached? %>
+              <%= cl_image_tag(camper.photo.key,
+                width: 400, height: 300, crop: :fill) %>
+              <% else %>
+              <img src=<%=camper.photo_url%> />
+            <% end %>
+            <div class="card-product-infos">
+              <h2 style="padding-left: 30px; padding-bottom: 8px; padding-top:16px; color:#064635;"><%= camper.model %></h2>
+              <ul>
+                <% camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
+                  <li><%= item %></li>
+                  <% break if i >= 6 %>
+                <% end  %>
+              </ul>
+              <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
             </div>
-          <% end  %>
+          </div>
         <% end  %>
       <% end %>
     </div>
