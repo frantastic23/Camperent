@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2022_02_08_184353) do
     t.string "model"
     t.integer "price"
     t.text "description"
-    t.boolean "availability"
     t.string "photo_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
