@@ -6,5 +6,12 @@ class PagesController < ApplicationController
 
   def campers
     @campers = Camper.all
+
+    @markers = @campers.geocoded.map do |camper|
+      {
+        lat: camper.latitude,
+        lng: camper.longitude
+      }
+    end
   end
 end
