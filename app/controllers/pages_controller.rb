@@ -5,6 +5,12 @@ class PagesController < ApplicationController
   end
 
   def campers
-    @campers = Camper.all
+    if params[:dt].present? || params[:df].present? || params[:address].present?
+      camps = Camper.search_by_addres(params[:address])
+      @campers = camps.select {|camper| camper.available?(params[:df], params[:dt])}
+
+    else
+      @campers = Camper.all
+    end
   end
 end
