@@ -14,11 +14,13 @@
           <h2>Total:        <%= @booking.cost %>€</h2>
           <% attr = {date_from: @booking.date_from, date_to: @booking.date_to}  %>
           <div class="form-actions btn btn-success rounded-pill mt-4 mb-1 mr-3 miracle">
-            <%= link_to 'Confirm', user_camper_booking_requests_path(@user, @camper, param: attr) { method: 'post'} %>
+
+            <%= link_to 'Confirm', user_camper_booking_requests_path(@user, @camper, param: attr), method: 'post' %>
+
           </div>
         <% else %>
           <h2>We are sorry, this camper is not available on the following dates</h2>
-        <%end  %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -25,7 +25,7 @@
         <div class="flat-form mx-4 mt-4">
           <% if user_signed_in? %>
             <h2 class="font-weight-bold">Book Now</h2>
-            <div class="md-form md-outline input-with-post-icon datepicker">
+            <div class="md-form md-outline input-with-post-icon">
               <%= simple_form_for [ @user, @camper, @booking ], url: confirm_user_camper_booking_requests_path(@user, @camper)  do |f| %>
 
                 <%= f.input :date_from, as: :string, required: true, placeholder:'select date', :order => [:day, :month, :year], input_html: {class: "datepicker", id: "from" } %>
