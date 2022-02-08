@@ -4,19 +4,32 @@
         <% if @camper.photo.attached? %>
           <%= cl_image_tag @camper.photo.key %>
         <% else %>
-          <%= image_tag @camper.photo_url %>
+          <%= image_tag @camper.photo_url, crop: :fill %>
         <% end %>
-        <div class="card-trip-infos">
+        <div class="card-trip-infos col-8">
           <div>
-            <h2> <%= @camper.model %></h2>
-            <ul>
-                    <% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
-                      <p><%= item %></p>
-                    <% end  %>
-            </ul>
-
+            <h2 class="my-3"> <%= @camper.model %></h2>
+            <p><% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
+                  <%= item %>
+                <% end %>
+            </p>
           </div>
-          <h2 class="card-trip-pricing"><%= @camper.price %>€</h2>
+          <div id="cardPrice">
+            <h2 class="card-trip-pricing my-3"><%= @camper.price %>€</h2>
+          </div>
+
+          <div class=”parent”>
+
+          <div class=”box” id=”one”>
+          <% @camper.capacity.times do %>
+          <i class="fa-solid fa-person"></i>
+          <% end %>
+          </div>
+          <div class=”box” id=”two”><%= @camper.fuel %></div>
+          <div class=”box” id=”three”><%= @camper.gear %></div>
+          <div class=”box” id=”four”><%= @camper.address %></div>
+          </div>
+
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
     </div>

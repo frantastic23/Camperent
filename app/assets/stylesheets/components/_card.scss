@@ -146,6 +146,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .card-trip > img {
@@ -172,7 +173,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
 .card-trip-infos .card-trip-user {
@@ -180,4 +180,25 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+#cardPrice {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+}
+
+.parent {
+ border: 2px black dotted;
+ display: inline-block;
+}
+.box {
+ display: inline-block;
+ background: red;
+ width: 100px;
+ height: 100px;
+}
+#two {
+  background: green;
 }
