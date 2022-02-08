@@ -6,7 +6,7 @@
                 <%= cl_image_tag(booking.camper.photo.key,
                  width: 400, height: 300, crop: :fill) %>
                <% else %>
-                <img src=<%=booking.camper.photo_url%> />
+                <img src=<%=booking.camper.photo_url%>/>
               <% end %>
         <div class="card-index container">
           <div class="row">
