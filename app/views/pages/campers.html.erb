@@ -1,11 +1,11 @@
 <%= form_tag campers_path, method: :get do %>
   <%= text_field_tag :date_from,
-    params[:df],
+    params[:date_from],
     class: "form-control datepicker",
     placeholder: "Start date"
   %>
   <%= text_field_tag :date_to,
-    params[:dt],
+    params[:date_to],
     class: "form-control datepicker",
     placeholder: "End date"
   %>
