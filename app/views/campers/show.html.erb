@@ -1,10 +1,13 @@
+
+
+
 <div class="container mt-4">
     <div class="row justify-content-between ">
       <div class="card-trip col-6">
         <% if @camper.photo.attached? %>
           <%= cl_image_tag @camper.photo.key %>
         <% else %>
-          <%= image_tag @camper.photo_url %>
+          <%#image_tag @camper.photo_url %>
         <% end %>
         <div class="card-trip-infos">
           <div>
