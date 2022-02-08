@@ -18,3 +18,7 @@ users = User.all
   camper.user = users[i]
   camper.save
 end
+
+camper = Camper.new(model: , price: , description: , availability: true, photo_url: 'https://www.autocaravanas.es/wp-content/uploads/2020/09/Itineo-PF600-2021.jpg')
+  camper.user = users[i]
+  camper.save
