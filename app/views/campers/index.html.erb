@@ -7,7 +7,6 @@
       <% @campers.each do |camper| %>
       <%= link_to  %>
         <%=link_to "Delete", camper_path(camper.id), method: "delete", data: {confirm: "Are you sure?"} %>
-        <% if camper.availability  %>
           <%= link_to camper_path(camper) do %>
             <div class="card-product">
               <% if camper.photo.attached? %>
@@ -27,8 +26,7 @@
                 <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
               </div>
             </div>
-          <% end  %>
-        <% end  %>
+          </div>
       <% end %>
     </div>
   </div>
