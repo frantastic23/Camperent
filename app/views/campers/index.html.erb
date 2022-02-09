@@ -17,12 +17,12 @@
                     <li><%= item %></li>
                     <% break if i >= 6 %>
                   <% end  %>
-                </ul>
-                <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
                 <div class="container" mt-4>
                     <%=link_to "Remove", camper_path(camper.id), method: "delete", data: {confirm: "Are you sure?"} %>
                     <%= link_to 'edit', edit_camper_path(camper) %>
                 </div>
+                </ul>
+                <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
                 </div>
               </div>
             </div>
