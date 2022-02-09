@@ -10,7 +10,8 @@ class PagesController < ApplicationController
     @markers = @campers.geocoded.map do |camper|
       {
         lat: camper.latitude,
-        lng: camper.longitude
+        lng: camper.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { camper: camper })
       }
     end
   end
