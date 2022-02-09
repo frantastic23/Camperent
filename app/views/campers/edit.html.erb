@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="row">
-    <h1 style="color:#064635; padding-top:16px;">Post a camper ➕</h1>
+    <h1 style="color:#064635; padding-top:16px;">Edit your Camper ➕</h1>
 
     <%= simple_form_for [ @user, @camper ] do |f| %>
       <%= f.input :model %>
@@ -8,7 +8,7 @@
       <%= f.input :description %>
       <br>
       <%= f.input :photo, as: :file %>
-      <%= f.submit "Add camper", class: "btn btn-success rounded-pill my-5 mr-3" %>
+      <%= f.submit "save edit", class: "btn btn-success rounded-pill my-5 mr-3" %>
     <% end %>
   </div>
 </div>

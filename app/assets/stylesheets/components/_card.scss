@@ -44,6 +44,13 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+.card-actions {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 16px 24px;
+
+}
 
 .card-product {
   overflow: hidden;
