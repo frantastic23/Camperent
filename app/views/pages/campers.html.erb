@@ -7,6 +7,7 @@
           <div class="card-product">
             <img src=<%=camper.photo_url%> />
             <div class="card-product-infos">
+            <div>
               <h2 style="padding-left: 30px; padding-bottom: 8px; padding-top:16px; color:#064635;"><%= camper.model %></h2>
               <ul>
                 <% camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
@@ -14,6 +15,7 @@
                   <% break if i >= 6 %>
                 <% end  %>
               </ul>
+              </div>
               <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
             </div>
           </div>

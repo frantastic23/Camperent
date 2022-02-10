@@ -15,7 +15,7 @@ class CampersController < ApplicationController
     @camper = Camper.new(camper_params)
     @camper.user = current_user
     if @camper.save
-      redirect_to camper_path(@camper)
+      redirect_to user_campers_path
     else
       render :new
     end

@@ -6,5 +6,14 @@ class PagesController < ApplicationController
 
   def campers
     @campers = Camper.all
+    description(@campers)
+  end
+
+  private
+
+  def description(items)
+    items.map do |item|
+      item.description = item.description[0, 150] if item.description.length > 150
+    end
   end
 end
