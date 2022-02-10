@@ -3,7 +3,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-// External libraries
+// External libraries hello
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -11,6 +11,13 @@
 @import 'select2/dist/css/select2';
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
+
 // Your CSS partials
+@import "components/button";
 @import "components/index";
+@import "components/navbar";
 @import "pages/index";
+@import "components/homepage";
+@import "components/showpage";
+@import "components/search";
+@import "components/camperimage"

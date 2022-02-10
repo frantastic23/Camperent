@@ -9,22 +9,37 @@
         <% else %>
           <img src=<%=@camper.photo_url%> />
         <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2> <%= @camper.model %></h2>
-            <ul>
-                    <% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
-                      <p><%= item %></p>
-                    <% end  %>
-            </ul>
 
-          </div>
-          <h2 class="card-trip-pricing"><%= @camper.price %>€</h2>
+        <div class="card-trip-infos col-12">
+          <div class="block">
+
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <h3 class="mt-3 mb-2"> <%= @camper.model %></h3>
+            <p><% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
+                  <%= item %>
+                <% end %>
+            </p>
+          </div>
+          </div>
+          <div class="cardPrice">
+            <h2 class="card-trip-pricing my-3"><%= @camper.price %>€<p class="d-inline" style="font-size:10px;"> / day </p></h2>
+          </div>
+          <div class="parent">
+          <div class="row">
+            <div class="box cardPrice">
+              <% @camper.capacity.times do %>
+              <i class="fa-solid fa-person"></i>
+              <% end %>
+              </div>
+              <div class="box" ><i class="fa-solid fa-gas-pump pR"></i><%= @camper.fuel %></div>
+              <div class="box" ><i class="fa-solid fa-hand pR"></i><%= @camper.gear %></div>
+              <div class="box" ><i class="fa-solid fa-location-dot pR"></i><%= @camper.address %></div>
+            </div>
+          </div>
         </div>
-    </div>
 
-      <div class="m-auto bg-light my-4 shadow p-3 mb-5 bg-body rounded col-4">
+
+      <div class="m-auto bg-white my-1 shadow p-3 mb-5 bg-body rounded col-4">
         <div class="flat-form mx-4 mt-4">
           <% if user_signed_in? %>
             <h2 class="font-weight-bold">Book Now</h2>
