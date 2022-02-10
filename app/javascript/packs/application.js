@@ -21,6 +21,7 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import "jquery-ui-bundle";
+import select2 from "select2";
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
@@ -28,6 +29,7 @@ import "jquery-ui-bundle";
 
 // Internal imports, e.g:
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 

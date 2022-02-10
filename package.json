@@ -17,6 +17,7 @@
     "metro4": "^4.5.0",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
+    "select2": "^4.1.0-rc.0",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"

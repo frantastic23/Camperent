@@ -1,0 +1,23 @@
+<%= form_tag campers_path, class: "simple_form search", method: :get do %>
+  <div class="search-form-control form-group d-flex justify-content-around">
+    <%= text_field_tag :date_from,
+      params[:date_from],
+      class: "form-control string required datepicker",
+      id:"search_query",
+      placeholder: "Start date"
+    %>
+    <%= text_field_tag :date_to,
+      params[:date_to],
+      class: "form-control string required datepicker",
+      id:"search_query",
+      placeholder: "End date"
+    %>
+    <%= text_field_tag :address,
+      params[:address],
+      class: "form-control string required",
+      id: "camper_address",
+      placeholder: "Select your City"
+    %>
+    <%= submit_tag "Search", class: "btn btn-flat" %>
+  </div>
+<% end %>

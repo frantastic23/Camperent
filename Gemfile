@@ -17,6 +17,9 @@ gem 'flatpickr'
 #search form gem
 gem 'pg_search', '~> 2.3.0'
 
+#implementing select2 for dropdowns
+gem "select2-rails"
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
