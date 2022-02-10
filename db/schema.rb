@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_184727) do
     t.integer "capacity"
     t.float "latitude"
     t.float "longitude"
+    t.integer "capacity"
     t.string "fuel"
     t.string "gear"
     t.index ["user_id"], name: "index_campers_on_user_id"
