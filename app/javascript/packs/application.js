@@ -28,9 +28,13 @@ import "jquery-ui-bundle";
 
 // Internal imports, e.g:
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
+  initMapbox();
+  initAutocomplete();
 
 });
