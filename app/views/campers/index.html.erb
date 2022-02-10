@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="row">
     <h1 style="color:#064635; padding-top:16px;">My Campers </h1>
-    <div class="cards nodeco">
+    <div class="cards-trip col-6">
       <% @campers.each do |camper| %>
         <%= link_to camper_path(camper) do  %>
           <div class="card-product">
@@ -21,7 +21,10 @@
                   <% end  %>
                 </ul>
               </div>
+              <div class="cardPrice">
               <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
+              </div>
+
             </div>
             <div class="container" mt-4>
               <%=link_to "Remove", camper_path(camper.id), method: "delete", data: {confirm: "Are you sure?"} %>
