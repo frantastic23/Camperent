@@ -11,10 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2022_02_08_184727) do
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_02_08_184353) do
-=======
->>>>>>> 63e48bece59de349a1d648a9aad472a4f3a0c71b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +67,6 @@ ActiveRecord::Schema.define(version: 2022_02_08_184353) do
     t.integer "capacity"
     t.float "latitude"
     t.float "longitude"
-    t.integer "capacity"
     t.string "fuel"
     t.string "gear"
     t.index ["user_id"], name: "index_campers_on_user_id"
