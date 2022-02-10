@@ -1,3 +1,22 @@
+<%= form_tag campers_path, method: :get do %>
+  <%= text_field_tag :date_from,
+    params[:date_from],
+    class: "form-control datepicker",
+    placeholder: "Start date"
+  %>
+  <%= text_field_tag :date_to,
+    params[:date_to],
+    class: "form-control datepicker",
+    placeholder: "End date"
+  %>
+  <%= text_field_tag :address,
+    params[:address],
+    class: "form-control",
+    placeholder: "Address"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <div class="container mt-4">
   <div class="row">
   <h1 style="color:#064635; padding-top:16px;">Find a camper </h1>

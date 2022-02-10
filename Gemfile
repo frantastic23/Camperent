@@ -14,6 +14,9 @@ gem 'validates_timeliness', '~> 6.0.0.beta2'
 #date picker for the booking
 gem 'flatpickr'
 
+#search form gem
+gem 'pg_search', '~> 2.3.0'
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
