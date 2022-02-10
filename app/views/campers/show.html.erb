@@ -7,7 +7,7 @@
         <% if @camper.photo.attached? %>
           <%= cl_image_tag @camper.photo.key %>
         <% else %>
-          <%=image_tag @camper.photo_url %>
+          <img src=<%=@camper.photo_url%> />
         <% end %>
         <div class="card-trip-infos">
           <div>
