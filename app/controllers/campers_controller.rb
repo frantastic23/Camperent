@@ -33,6 +33,7 @@ class CampersController < ApplicationController
 
   def update
     @camper = Camper.find(params[:id])
+    @user = @camper.user
     if @camper.update(camper_params)
       redirect_to user_campers_path(@user)
     else
