@@ -33,6 +33,6 @@ class CampersController < ApplicationController
   private
 
   def camper_params
-    params.require(:camper).permit(:model, :price, :description, :photo_url, :photo, :capacity, :gear, :fuel)
+    params.require(:camper).permit(:model, :price, :description, :photo_url, :photo, :capacity, :gear, :fuel, :address)
   end
 end
