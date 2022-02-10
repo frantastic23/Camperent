@@ -29,12 +29,9 @@ import select2 from "select2";
 
 // Internal imports, e.g:
 import { initFlatpickr } from "../plugins/flatpickr";
-<<<<<<< HEAD
 import { initSelect2 } from '../components/init_select2';
-=======
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
->>>>>>> master
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
