@@ -13,6 +13,7 @@
     "jquery": "^3.6.0",
     "jquery-ui": "^1.13.1",
     "jquery-ui-bundle": "^1.12.1-migrate",
+    "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.7.0",
     "metro4": "^4.5.0",
     "places.js": "^1.19.0",
