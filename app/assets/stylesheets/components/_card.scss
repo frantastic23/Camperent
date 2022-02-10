@@ -3,8 +3,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px 50px;
   padding: 35px 16px;
-
-
 }
 
 .nodeco a{
@@ -49,7 +47,7 @@
 .card-product {
   overflow: hidden;
   height: 200px;
-  width:100% !important;
+  
   background: rgba(255, 255, 255, 0.849);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -143,6 +141,9 @@
 }
 .card-product-infos {
   position: relative;
+  top: -40px;
+
+
 
 }
 .card-trip {
@@ -188,7 +189,7 @@
 
 #cardPrice {
   display: flex;
-  position: absolute;
+  position: relative;
   bottom: 5px;
   right: 30px;
 }
