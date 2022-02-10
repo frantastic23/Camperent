@@ -1,6 +1,6 @@
 class CampersController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @campers = current_user.campers
@@ -28,6 +28,24 @@ class CampersController < ApplicationController
   end
 
   def edit
+    @camper = Camper.find(params[:id])
+  end
+
+  def update
+    @camper = Camper.find(params[:id])
+    @user = @camper.user
+    if @camper.update(camper_params)
+      redirect_to user_campers_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @camper = Camper.find(params[:id])
+    @user = @camper.user
+    @camper.destroy
+    redirect_to user_campers_path(@user)
   end
 
   private

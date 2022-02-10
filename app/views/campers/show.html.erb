@@ -1,3 +1,6 @@
+
+
+
 <div class="container mt-4">
     <div class="row justify-content-between ">
       <div class="card-trip col-6">
@@ -6,8 +9,10 @@
         <% else %>
           <img src=<%=@camper.photo_url%> />
         <% end %>
+
         <div class="card-trip-infos col-12">
           <div class="block">
+
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
             <h3 class="mt-3 mb-2"> <%= @camper.model %></h3>
             <p><% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>

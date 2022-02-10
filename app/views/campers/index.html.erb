@@ -3,12 +3,12 @@
   <h1 style="color:#064635; padding-top:16px;">My Campers </h1>
     <div class="cards nodeco">
       <% @campers.each do |camper| %>
-        <%= link_to camper_path(camper) do %>
+        <%= link_to camper_path(camper) do  %>
           <div class="card-product">
             <% if camper.photo.attached? %>
               <%= cl_image_tag(camper.photo.key,
                 width: 400, height: 300, crop: :fill) %>
-              <% else %>
+            <% else %>
               <img src=<%=camper.photo_url%> />
             <% end %>
             <div class="card-product-infos">
@@ -23,8 +23,11 @@
               </div>
               <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
             </div>
+            <div class="container" mt-4>
+              <%=link_to "Remove", camper_path(camper.id), method: "delete", data: {confirm: "Are you sure?"} %>
+              <%= link_to 'edit', edit_camper_path(camper) %>
+            </div>
           </div>
-        <% end  %>
       <% end %>
     </div>
   </div>

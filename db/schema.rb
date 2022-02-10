@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_184353) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
+    t.integer "capacity"
     t.float "latitude"
     t.float "longitude"
     t.integer "capacity"
