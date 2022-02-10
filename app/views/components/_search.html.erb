@@ -1,14 +1,23 @@
-<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<%= form_tag campers_path, class: "simple_form search", method: :get do %>
   <div class="search-form-control form-group d-flex justify-content-around">
-    <input class="form-control string required datepicker" type="text" name="search[query]" id="search_query" placeholder="From When .."/>
-
-		<input class="form-control string required datepicker" type="text" name="search[query]" id="search_query" placeholder= "till when" />
-
-    <input class="form-control string required datepicker" type="text" name="search[query]" id="search_query" placeholder= "till when" />
-
-		<button name="button" type="submit" class="btn btn-flat">
-			<i class="fas fa-search"></i> Search
-		</button>
-
+    <%= text_field_tag :date_from,
+      params[:date_from],
+      class: "form-control string required datepicker",
+      id:"search_query",
+      placeholder: "Start date"
+    %>
+    <%= text_field_tag :date_to,
+      params[:date_to],
+      class: "form-control string required datepicker",
+      id:"search_query",
+      placeholder: "End date"
+    %>
+    <%= text_field_tag :address,
+      params[:address],
+      class: "form-control string required",
+      id: "camper_address",
+      placeholder: "Select your City"
+    %>
+    <%= submit_tag "Search", class: "btn btn-flat" %>
   </div>
-</form>
+<% end %>
