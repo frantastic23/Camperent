@@ -28,6 +28,7 @@ class CampersController < ApplicationController
   end
 
   def edit
+
   end
 
   private
