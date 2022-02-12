@@ -1,16 +1,15 @@
 <div class="container justify-content-center my-5">
   <div class="row justify-content-around">
     <% @bookings.each do |booking| %>
-      <div class="card-index">
+      <div class="card-index relative">
         <% if booking.camper.photo.attached? %>
-                <%= cl_image_tag(booking.camper.photo.key,
-                 width: 400, height: 300, crop: :fill) %>
-               <% else %>
-                <img src=<%=booking.camper.photo_url%>/>
-              <% end %>
-        <div class="card-index container">
-          <div class="flex ml-3">
-            <div class="col-3">
+          <%= cl_image_tag(booking.camper.photo.key,
+            width: 400, height: 300, crop: :fill) %>
+        <% else %>
+          <img src=<%=booking.camper.photo_url%>/>
+        <% end %>
+        <div class="flex align-items-left">
+            <div class="col-3 my-3">
               <p>User:</p>
               <p>Email:</p>
               <p>Model:</p>
@@ -18,7 +17,7 @@
               <p>To:</p>
               <p>Total Cost:</p>
             </div>
-            <div class="col-6 mx-3">
+            <div class="col-6 my-3">
               <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
               <p><%= booking.user.email %></p>
               <p><%= booking.camper.model %></p>
@@ -26,10 +25,7 @@
               <p><%= booking.date_to %></p>
               <p><strong><%= booking.cost %> €</strong></p>
             </div>
-            <p>
-           <%= link_to 'Leave a review', new_camper_review_path(booking.camper), class: "btn btn-success rounded-pill" %>
-           </p>
-          </div>
+          <%= link_to 'Leave a review', new_camper_review_path(booking.camper), class: "btn btn-success rounded-pill br0" %>
         </div>
       </div>
     <% end %>
