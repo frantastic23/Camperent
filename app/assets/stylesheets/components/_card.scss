@@ -260,6 +260,15 @@ font-family: 'EB Garamond', serif;
   color: #4e4d47d3;
 }
 
+.absolute {
+  position: absolute;
+  top: 210px;
+  left: 300px;
+}
+
+.container-relative {
+  position:relative;
+}
 
 .card-trip {
 
@@ -329,6 +338,17 @@ background-color: white;
   bottom: -12px;
   left: 320px;
 }
-.reviewBTN {
 
+.relative {
+  position: relative;
+}
+.br0 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.br02 {
+  position: absolute;
+  bottom: px;
+  right: 20px;
 }

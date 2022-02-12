@@ -42,12 +42,12 @@
         </div>
 
 
-      <div class="m-auto bg-white my-1 shadow p-3 mb-5 bg-body rounded col-4">
+      <div class="m-auto bg-white my-1 shadow p-3 mb-5 bg-body rounded col-4 relative">
         <div class="flat-form mx-4 mt-4">
           <% if user_signed_in? %>
             <% if @camper.user == current_user %>
-              <p class="font-light"> This Camper is yours! would you like to edit it?</p>
-              <%= link_to 'Edit', edit_camper_path(@camper), class: 'btn btn-success rounded' %>
+              <p class="font-light"> This Camper is yours!<br> Would you like to edit it?</p>
+              <%= link_to 'Edit', edit_camper_path(@camper), class: 'btn btn-success rounded-pill br0' %>
             <% else %>
               <h2 class="font-weight-bold">Book Now</h2>
               <div class="md-form md-outline input-with-post-icon">
@@ -66,6 +66,13 @@
           <% end  %>
         </div>
       </div>
+       <ul class="list-group mt-4">
+       <h2 class="textG">Reviews</h2>
+          <% @camper.reviews.each do |review| %>
+            <li class="list-group-item my-2">
+            <%= review.content %> <%= "⭐" * review.stars %></li>
+          <% end %>
+        </ul>
     </div>
     </div>
   </div>

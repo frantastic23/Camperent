@@ -1,0 +1,53 @@
+ <% @campers.each do |camper| %>
+  <div id="container">
+    <%= link_to camper_path(camper) do %>
+
+      <div class="product-details">
+
+        <h1><%= camper.model %></h1>
+        <span class="hint-star star">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </span>
+
+        <p class="information">"<%= camper.description %>"</p>
+
+
+        <div class="control">
+          <span class="price"><%= camper.price %>€</span>
+        </div>
+
+      </div>
+
+      <div class="product-image">
+
+        <% if camper.photo.attached? %>
+          <%= cl_image_tag camper.photo.key %>
+        <% else %>
+          <img src=<%=camper.photo_url%> />
+        <% end %>
+
+        <div class="info">
+          <h2> Features</h2>
+          <ul>
+            <li><% camper.capacity.times do %>
+              <i class="fa-solid fa-person"></i>
+              <% end %></li>
+            <li><strong><i class="fa-solid fa-gas-pump pR"></i></strong><%= camper.fuel %></li>
+            <li><strong><i class="fa-solid fa-hand pR"></i></strong><%= camper.gear %></li>
+            <li><strong><i class="fa-solid fa-location-dot pR"></i></strong><%= camper.address %></li>
+          </ul>
+        </div>
+      </div>
+    <% end  %>
+    <div class="container-relative">
+      <div class="inline">
+          <p class="absolute"><%=link_to "🗑   ", camper_path(camper.id), method: "delete", data: {confirm: "Are you sure?"}, style:'text-decoration:none; padding-right:10px;'%>
+            <%= link_to '✏️', edit_camper_path(camper), style:'text-decoration:none' %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

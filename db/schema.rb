@@ -63,18 +63,22 @@ ActiveRecord::Schema.define(version: 2022_02_12_134904) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "address"
     t.integer "capacity"
-    t.float "latitude"
-    t.float "longitude"
     t.string "fuel"
     t.string "gear"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_campers_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "stars"
+    t.text "content"
+    t.bigint "camper_id", null: false
+    t.index ["camper_id"], name: "index_reviews_on_camper_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,4 +101,5 @@ ActiveRecord::Schema.define(version: 2022_02_12_134904) do
   add_foreign_key "booking_requests", "campers"
   add_foreign_key "booking_requests", "users"
   add_foreign_key "campers", "users"
+  add_foreign_key "reviews", "campers"
 end
