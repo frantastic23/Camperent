@@ -1,9 +1,57 @@
-<div class="cards">
-  <div class="card-product">
-    <img src="https://www.myluxury.it/img/2021/10/Volkner-Mobil-Performance-S.jpg" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
-    </div>
+ <% @campers.each do |camper| %>
+  <div id="container">
+    <%= link_to camper_path(camper) do %>
+
+      <div class="product-details">
+
+        <h1><%= camper.model %></h1>
+        <span class="hint-star star">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </span>
+
+        <p class="information">"<%= camper.description %>"</p>
+
+
+
+        <div class="control">
+
+          <button class="btn-card" href=<%=camper_path(camper) %>>
+          <span class="price"><%= camper.price %>€</span>
+          <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+          <span class="buy">Book now</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="product-image">
+
+        <% if camper.photo.attached? %>
+          <%= cl_image_tag camper.photo.key %>
+        <% else %>
+          <img src=<%=camper.photo_url%> />
+        <% end %>
+
+
+        <div class="info">
+          <h2> Features</h2>
+          <ul>
+            <li><% camper.capacity.times do %>
+              <i class="fa-solid fa-person"></i>
+              <% end %></li>
+            <li><strong><i class="fa-solid fa-gas-pump pR"></i></strong><%= camper.fuel %></li>
+            <li><strong><i class="fa-solid fa-hand pR"></i></strong><%= camper.gear %></li>
+            <li><strong><i class="fa-solid fa-location-dot pR"></i></strong><%= camper.address %></li>
+
+          </ul>
+        </div>
+      </div>
+
+    <% end  %>
   </div>
-</div>
+<% end %>
