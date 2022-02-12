@@ -12,8 +12,11 @@
 
         <div class="card-trip-infos col-12">
           <div class="block">
-
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <% if @camper.user.photo.attached? %>
+              <%= cl_image_tag @camper.user.photo.key, class: "card-trip-user avatar" %>
+            <% else %>
+              <img src=<%=@camper.user.picture_url%> class="card-trip-user avatar-bordered" />
+            <% end %>
             <h3 class="mt-3 mb-2"> <%= @camper.model %></h3>
             <p><% @camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
                   <%= item %>
