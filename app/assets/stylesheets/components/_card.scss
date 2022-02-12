@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+
 .cards {
   display: grid;
   grid-template-columns: 1fr;
-
   padding: 16px 16px;
   flex-grow: 1;
-
+  grid-gap: 10px 10px;
 }
 
 .nodeco{
@@ -46,62 +47,186 @@
   }
 }
 
-.card-product {
+// ----------- Cards for Index imported from website
+
+
+#container{
+	box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 1em auto;
+	height: 250px;
+	width: 700px;
+
+
+}
+
+
+
+.product-details {
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
+	height: 100%;
+	float: left;
+	width: 40%;
+
+}
+
+#container .product-details h1{
+	font-family: 'Bebas Neue', cursive;
+	display: inline-block;
+	position: relative;
+	font-size: 30px;
+	color: #344055;
+	margin: 0;
+
+}
+
+#container .product-details h1:before{
+	position: absolute;
+	content: '';
+	right: 0%;
+	top: 0%;
+	transform: translate(25px, -15px);
+	font-family: 'Bree Serif', serif;
+	display: inline-block;
+	background: #ffe6e6;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 5px;
+	color: white;
+	margin: 0;
+	animation: chan-sh 6s ease infinite;
+
+}
+
+
+
+
+
+
+.hint-star {
+	display: inline-block;
+	margin-left: 0.5em;
+	color: gold;
+	width: 50%;
+}
+
+
+#container .product-details > p {
+font-family: 'EB Garamond', serif;
+	text-align: center;
+	font-size: 18px;
+	color: #7d7d7d;
+
+}
+.control{
+	position: absolute;
+	bottom: 10%;
+	left: 22.8%;
+
+}
+.btn-card{
+
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background:  #809fff;
+	border-radius: 5px;
+  position: relative;
   overflow: hidden;
-  height: 200px;
-  width: 600px;
-  background: rgba(255, 255, 255, 0.849);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-   &:hover{
-    background-color: #e5f9f6;
-    color: white;
-    float:initial;
- }
-}
-
-.card-product img {
-  height: 100%;
-  width: 180px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-  color: #4e4d47b0;
-}
-
-.card-product h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: #4e4d47d3;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	color: #eee;
+	padding: 0;
+	margin: 0;
 
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+.btn-card:hover{transform: translateY(-6px);
+	background: #1a66ff;}
 
-.card-index {
-  margin-top: 10;
-  overflow: hidden;
-  height: 200px;
-  width: 800px;
-  background: rgba(255, 255, 255, 0.849);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: grid;
-  grid-template-columns: 1fr 1fr
-
+.btn-card span {
+	font-family: 'Farsan', cursive;
+	transition: transform 0.3s;
+	display: inline-block;
+  padding: 10px 20px;
+	font-size: 1.2em;
+	margin:0;
 
 }
+.btn-card .price, .shopping-cart{
+	background: #333;
+	border: 0;
+	margin: 0;
+}
+
+.btn-card .price {
+	transform: translateX(-10%); padding-right: 15px;
+}
+
+.btn-card .shopping-cart {
+	transform: translateX(-100%);
+  position: absolute;
+	background: #333;
+	z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.btn-card .buy {z-index: 3; font-weight: bolder;}
+
+.btn-card:hover .price {transform: translateX(-110%);}
+
+.btn-card:hover .shopping-cart {transform: translateX(0%);}
+
+
+
+.product-image {
+	transition: all 0.3s ease-out;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	float: right;
+	width: 45%;
+	display: inline-block;
+}
+
+#container img {height: 100%;width: 100%}
+
+.info {
+    background: rgba(27, 26, 26, 0.9);
+    font-family: 'Bree Serif', serif;
+    transition: all 0.3s ease-out;
+    transform: translateX(-100%);
+    position: absolute;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 105%;
+    cursor: no-drop;
+    color: #FFF;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.info h2 {text-align: center}
+.product-image:hover .info{transform: translateX(0);}
+
+.info ul li{transition: 0.3s ease;}
+.info ul li:hover{transform: translateX(50px) scale(1.3);}
+
+.product-image:hover img {transition: all 0.3s ease-out;}
+.product-image:hover img {transform: scale(1.2, 1.2);}
+
+// __________ Cards created by us
+
 
 .card-index .container {
   padding: 10px
@@ -123,22 +248,7 @@
   color: #4e4d47d3;
 }
 
-.card-product .card-product-infos {
-    opacity: .6;
-    color: #2c2b27 !important;
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7
-}
-.card-product-infos {
-  position: relative;
-  left: 20px;
-  right: 10px;
 
-
-
-
-}
 .card-trip {
 
   overflow: hidden;
