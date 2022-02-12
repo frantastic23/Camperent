@@ -227,6 +227,18 @@ font-family: 'EB Garamond', serif;
 
 // __________ Cards created by us
 
+.card-index {
+  margin-top: 10;
+  overflow: hidden;
+  height: 200px;
+  width: 800px;
+  background: rgba(255, 255, 255, 0.849);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr
+
+
+}
 
 .card-index .container {
   padding: 20px 20px;
@@ -318,5 +330,5 @@ background-color: white;
   left: 320px;
 }
 .reviewBTN {
-  
+
 }
