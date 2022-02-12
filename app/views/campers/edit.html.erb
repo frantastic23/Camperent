@@ -1,14 +1,23 @@
 <div class="container mt-4">
   <div class="row">
-    <h1 style="color:#064635; padding-top:16px;">Edit your Camper ➕</h1>
-
-    <%= simple_form_for [ @user, @camper ] do |f| %>
-      <%= f.input :model %>
-      <%= f.input :price %>
-      <%= f.input :description %>
-      <br>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "save edit", class: "btn btn-success rounded-pill my-5 mr-3" %>
-    <% end %>
+    <div class="col-6 m-auto bg-light my-4 shadow p-3 mb-5 bg-body rounded">
+      <div class="flat-form mx-4 mt-4">
+        <h1 style="color:#064635;" class="my-2 mb-4">Edit My Camper 🖌 </h1>
+        <div class="my-2">
+            <%= simple_form_for [ @user, @camper ] do |f| %>
+            <%= f.input :model%>
+            <%= f.input :description %>
+            <%= f.input :capacity %>
+            <%= f.input :fuel %>
+            <%= f.input :gear %>
+            <%= f.input :address, input_html: { class:"camper_autocomplete" } %>
+            <%= f.input :price %>
+            <br>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit "Add camper", class: "btn btn-success rounded-pill mt-4 mb-3 mr-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
