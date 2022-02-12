@@ -7,11 +7,11 @@
           <%= simple_form_for [ @user, @camper ] do |f| %>
             <%= f.input :model%>
             <%= f.input :description %>
-            <%= f.input :capacity %>
-            <%= f.input :fuel %>
-            <%= f.input :gear %>
+            <%= f.input :capacity, collection: 1..7, selected: 1 %>
+            <%= f.input :fuel, collection: %w[Gas Diesel Methane Eletric Hybrid Others] %>
+            <%= f.input :gear, collection: %w[Manual Automatic] %>
             <%= f.input :address, input_html: { class:"camper_autocomplete" } %>
-            <%= f.input :price %>
+            <%= f.input :price, input_html: { min: '0', step: 'any' } %>
             <br>
 
             <%= f.input :photo, as: :file %>

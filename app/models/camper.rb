@@ -11,6 +11,13 @@ class Camper < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  validates :model, presence: true
+  validates :description, presence: true, length: { minimum: 10 }
+  validates :capacity, presence: true, inclusion: { in: 1..7 }
+  validates :fuel, presence: true, inclusion: { in: %w[Gas Diesel Methane Eletric Hybrid Others] }
+  validates :gear, presence: true, inclusion: { in: %w[Manual Automatic] }
+  validates :address, presence: true
+  validates :price, presence: true
 
   # d - m - Y
   def available?(date_from, date_to)
