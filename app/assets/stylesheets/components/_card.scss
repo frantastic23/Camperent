@@ -120,13 +120,13 @@
 #container .product-details > p {
 font-family: 'EB Garamond', serif;
 	text-align: center;
-	font-size: 18px;
+	font-size: 15px;
 	color: #7d7d7d;
 
 }
 .control{
 	position: absolute;
-	bottom: 10%;
+	bottom: 5%;
 	left: 22.8%;
 
 }
@@ -134,7 +134,7 @@ font-family: 'EB Garamond', serif;
 
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background:  #809fff;
+	background:  #19CB7F;
 	border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -148,7 +148,7 @@ font-family: 'EB Garamond', serif;
 }
 
 .btn-card:hover{transform: translateY(-6px);
-	background: #1a66ff;}
+	background: #12965d;}
 
 .btn-card span {
 	font-family: 'Farsan', cursive;
@@ -197,7 +197,7 @@ font-family: 'EB Garamond', serif;
 	display: inline-block;
 }
 
-#container img {height: 100%;width: 100%}
+#container img {object-fit: fill;}
 
 .info {
     background: rgba(27, 26, 26, 0.9);
