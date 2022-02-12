@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #b5e5d0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -49,7 +49,7 @@
 }
 .van {
   height: 50px;
-  width: 100px;
+  width: 50px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -63,3 +63,6 @@
   }
 }
 
+.greyT {
+  color:#A7BBC7;
+}
