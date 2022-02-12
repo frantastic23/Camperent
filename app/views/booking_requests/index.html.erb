@@ -26,7 +26,9 @@
               <p><%= booking.date_to %></p>
               <p><strong><%= booking.cost %> €</strong></p>
             </div>
-            <%= link_to 'Leave a review', class: 'btn btn-success rounded-pill' %>
+            <p>
+           <%= link_to 'Leave a review', new_camper_review_path(booking.camper), class: "btn btn-success rounded-pill" %>
+           </p>
           </div>
         </div>
       </div>
