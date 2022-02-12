@@ -1,0 +1,22 @@
+<div class="mt-3 ml-4 mr-5">
+  <h1>Leave a review ⭐</h1>
+
+    <%= simple_form_for [ @camper, @review ] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit "Submit review", class: "btn btn-success rounded-pill"%>
+      <%= link_to "Back", campers_path, class: "btn btn-secondary rounded-pill" %>
+    <% end %>
+
+  <br>
+  <br>
+  <br>
+  <br>
+   <ul class="list-group">
+    <% @camper.reviews.each do |review| %>
+      <li class="list-group-item mb-2">
+      <%= review.content %> <%= "⭐" * review.rating %></li>
+    <% end %>
+  </ul>
+  <br>
+</div>
