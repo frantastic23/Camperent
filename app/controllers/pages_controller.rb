@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: :home, raise: false
+  skip_before_action :authenticate_user!, only: %i[home campers], raise: false
   def home
   end
 

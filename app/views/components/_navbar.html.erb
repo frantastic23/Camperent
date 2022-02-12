@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60", class: "rounded-circle van" %>
+      <%= image_tag "https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60", class: "van" %>
     <h4 class="d-inline pt-2">Camperent</h4>
     <% end %>
 
@@ -9,8 +9,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse mr-2" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
         <% if user_signed_in? %>
         <li class="nav-item active mx-3">
             <%= link_to "Find a camper", campers_path, class: "nav-link button2" %>
@@ -28,7 +28,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= current_user.email %>
+              <p class="dropdown-item"> <%= current_user.email%></p>
+              <%= link_to "Edit account", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

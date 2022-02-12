@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/campers', to: 'pages#campers'
-  resources :campers, only: %i[show edit update destroy]
+  resources :campers, only: %i[show edit update destroy] do
+    resources :reviews, only: %i[new create]
+    member do
+      get :review
+    end
+  end
   resources :users do
     resources :campers, only: %i[index show new create] do
       resources :booking_requests, only: %i[new create] do

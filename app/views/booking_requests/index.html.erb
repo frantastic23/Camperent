@@ -1,7 +1,7 @@
 <div class="container justify-content-center my-5">
   <div class="row justify-content-around">
     <% @bookings.each do |booking| %>
-      <div class="card-index my-3">
+      <div class="card-index">
         <% if booking.camper.photo.attached? %>
                 <%= cl_image_tag(booking.camper.photo.key,
                  width: 400, height: 300, crop: :fill) %>
@@ -9,16 +9,16 @@
                 <img src=<%=booking.camper.photo_url%>/>
               <% end %>
         <div class="card-index container">
-          <div class="row">
-            <div class="col-sm">
-              <h3>User:</h3>
-              <h3>Email:</h3>
-              <h3>Model of the camper:</h3>
-              <h3>Date from:</h3>
-              <h3>Date to:</h3>
-              <h3>Total Cost:</h3>
+          <div class="flex ml-3">
+            <div class="col-3">
+              <p>User:</p>
+              <p>Email:</p>
+              <p>Model:</p>
+              <p>From:</p>
+              <p>To:</p>
+              <p>Total Cost:</p>
             </div>
-            <div class="col-sm">
+            <div class="col-6 mx-3">
               <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
               <p><%= booking.user.email %></p>
               <p><%= booking.camper.model %></p>
@@ -26,6 +26,7 @@
               <p><%= booking.date_to %></p>
               <p><strong><%= booking.cost %> €</strong></p>
             </div>
+            <%= link_to 'Leave a review', class: 'btn btn-success rounded-pill' %>
           </div>
         </div>
       </div>

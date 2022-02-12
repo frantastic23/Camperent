@@ -1,7 +1,8 @@
 import places from 'places.js';
+import $ from 'jquery';
 
 const initAutocomplete = () => {
-  const addressInput = document.getElementById('camper_address');
+  const addressInput = document.querySelector('.camper_autocomplete');
   if (addressInput) {
     places({ container: addressInput });
   }
