@@ -1,5 +1,7 @@
-
-
+<div class="main-container">
+  <div class="container mt-4">
+    <div class="row">
+      <h1 style="color:#064635; padding-top:16px;">Find a camper </h1>
       <div class="cards nodeco">
         <% @campers.each do |camper| %>
           <%= link_to camper_path(camper) do %>
@@ -10,9 +12,14 @@
                 <img src=<%=camper.photo_url%> />
               <% end %>
               <div class="card-product-infos">
-                <h4><%= camper.model %></h4>
-                 <p><%= camper.description %></p>
-                <h3><%= camper.price %>€</h3>
+                <h2 style="padding-left: 30px; padding-bottom: 8px; padding-top:16px; color:#064635;"><%= camper.model %></h2>
+                <ul>
+                  <% camper.description.delete("[]\"").split(',').each_with_index do |item , i| %>
+                    <li><%= item %></li>
+                    <% break if i >= 6 %>
+                  <% end  %>
+                </ul>
+                <h3 style="margin-bottom:10px;" class="price"><%= camper.price %>€</h3>
               </div>
             </div>
           <% end  %>
