@@ -47,7 +47,7 @@
           <% if user_signed_in? %>
             <% if @camper.user == current_user %>
               <p class="font-light"> This Camper is yours!<br> Would you like to edit it?</p>
-              <%= link_to 'Edit', edit_camper_path(@camper), class: 'btn btn-success rounded-pill br0' %>
+              <%= link_to 'Edit', camper_path(@camper), class: 'btn btn-success rounded-pill br0' %>
             <% else %>
               <h2 class="font-weight-bold">Book Now</h2>
               <div class="md-form md-outline input-with-post-icon">
